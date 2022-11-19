@@ -35,4 +35,38 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['A', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'R', 'I', 'N', 'F', 'E', 'L', 'D'],
+      ['Y', 'I', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'E', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'N', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'D', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'S', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'FRIENDS')
+
+    assert.isTrue(result);
+
+  });
+  
+  it("should return false if letters is not given", function() {
+    const result = wordSearch(
+      [], 'test')
+
+    assert.isFalse(result);
+  });
+
+  it("should return true is given letters and words as lower case", function() {
+    const result = wordSearch([
+      ['a','b', 'c', 'd'],
+      ['e', 'f', 'g', 'h']], 'AbCD')
+
+    assert.isTrue(result);
+  })
+
 });
+
